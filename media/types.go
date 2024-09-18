@@ -45,7 +45,7 @@ type GetVideoSources struct {
 }
 
 type GetVideoSourcesResponse struct {
-	VideoSources onvif.VideoSource
+	VideoSources []onvif.VideoSource
 }
 
 type GetAudioSources struct {

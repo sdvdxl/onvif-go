@@ -1,7 +1,8 @@
 module github.com/IOTechSystems/onvif
 
-go 1.21
-toolchain go1.22.5
+go 1.21.0
+
+toolchain go1.23.0
 
 require (
 	github.com/beevik/etree v1.4.1

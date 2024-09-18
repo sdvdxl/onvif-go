@@ -97,10 +97,10 @@ type GetPresetsResponse struct {
 }
 
 type SetPreset struct {
-	XMLName      string                `xml:"tptz:SetPreset"`
-	ProfileToken *onvif.ReferenceToken `xml:"tptz:ProfileToken,omitempty"`
-	PresetName   *xsd.String           `xml:"tptz:PresetName,omitempty"`
-	PresetToken  *onvif.ReferenceToken `xml:"tptz:PresetToken,omitempty"`
+	XMLName      string               `xml:"tptz:SetPreset"`
+	ProfileToken onvif.ReferenceToken `xml:"tptz:ProfileToken,omitempty"`
+	PresetName   xsd.String           `xml:"tptz:PresetName,omitempty"`
+	PresetToken  onvif.ReferenceToken `xml:"tptz:PresetToken,omitempty"`
 }
 
 type SetPresetResponse struct {
@@ -144,10 +144,10 @@ type SetHomePositionResponse struct {
 }
 
 type ContinuousMove struct {
-	XMLName      string                `xml:"tptz:ContinuousMove"`
-	ProfileToken *onvif.ReferenceToken `xml:"tptz:ProfileToken,omitempty"`
-	Velocity     *onvif.PTZSpeed       `xml:"tptz:Velocity,omitempty"`
-	Timeout      *xsd.Duration         `xml:"tptz:Timeout,omitempty"`
+	XMLName      string               `xml:"tptz:ContinuousMove"`
+	ProfileToken onvif.ReferenceToken `xml:"tptz:ProfileToken,omitempty"`
+	Velocity     onvif.PTZSpeed       `xml:"tptz:Velocity,omitempty"`
+	Timeout      xsd.Duration         `xml:"tptz:Timeout,omitempty"`
 }
 
 type ContinuousMoveResponse struct {
@@ -180,13 +180,13 @@ type AbsoluteMove struct {
 }
 
 type Vector struct {
-	PanTilt *onvif.Vector2D `json:",omitempty" xml:"onvif:PanTilt,omitempty"`
-	Zoom    *onvif.Vector1D `json:",omitempty" xml:"onvif:Zoom,omitempty"`
+	PanTilt *onvif.Vector2D `json:",omitempty" xml:"PanTilt,omitempty"`
+	Zoom    *onvif.Vector1D `json:",omitempty" xml:"Zoom,omitempty"`
 }
 
 type Speed struct {
-	PanTilt *onvif.Vector2D `json:",omitempty" xml:"onvif:PanTilt,omitempty"`
-	Zoom    *onvif.Vector1D `json:",omitempty" xml:"onvif:Zoom,omitempty"`
+	PanTilt *onvif.Vector2D `json:",omitempty" xml:"PanTilt,omitempty"`
+	Zoom    *onvif.Vector1D `json:",omitempty" xml:"Zoom,omitempty"`
 }
 
 type AbsoluteMoveResponse struct {
@@ -264,8 +264,8 @@ type ModifyPresetTourResponse struct {
 type OperatePresetTour struct {
 	XMLName         string                       `xml:"tptz:OperatePresetTour"`
 	ProfileToken    onvif.ReferenceToken         `xml:"tptz:ProfileToken"`
-	PresetTourToken onvif.ReferenceToken         `xml:"onvif:PresetTourToken"`
-	Operation       onvif.PTZPresetTourOperation `xml:"onvif:Operation"`
+	PresetTourToken onvif.ReferenceToken         `xml:"PresetTourToken"`
+	Operation       onvif.PTZPresetTourOperation `xml:"Operation"`
 }
 
 type OperatePresetTourResponse struct {

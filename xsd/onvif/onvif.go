@@ -937,15 +937,15 @@ type G726DecOptions struct {
 type AudioDecoderConfigurationOptionsExtension xsd.AnyType
 
 type StreamSetup struct {
-	Stream    *StreamType `xml:"onvif:Stream,omitempty"`
-	Transport *Transport  `xml:"onvif:Transport,omitempty"`
+	Stream    *StreamType `xml:"Stream,omitempty"`
+	Transport *Transport  `xml:"Transport,omitempty"`
 }
 
 type StreamType xsd.String
 
 type Transport struct {
-	Protocol *TransportProtocol `xml:"onvif:Protocol,omitempty"`
-	Tunnel   *Transport         `xml:"onvif:Tunnel,omitempty"`
+	Protocol *TransportProtocol `xml:"Protocol,omitempty"`
+	Tunnel   *Transport         `xml:"Tunnel,omitempty"`
 }
 
 // enum
@@ -1333,10 +1333,10 @@ type User struct {
 }
 
 type UserRequest struct {
-	Username  string         `xml:"onvif:Username,omitempty"`
-	Password  string         `xml:"onvif:Password,omitempty"`
-	UserLevel *UserLevel     `xml:"onvif:UserLevel,omitempty"`
-	Extension *UserExtension `xml:"onvif:Extension,omitempty"`
+	Username  string         `xml:"Username,omitempty"`
+	Password  string         `xml:"Password,omitempty"`
+	UserLevel *UserLevel     `xml:"UserLevel,omitempty"`
+	Extension *UserExtension `xml:"Extension,omitempty"`
 }
 
 type UserLevel xsd.String
@@ -1618,9 +1618,9 @@ type NetworkInterfaceLink struct {
 type IANA_IfTypes xsd.Int
 
 type NetworkInterfaceConnectionSetting struct {
-	AutoNegotiation *xsd.Boolean `xml:"onvif:AutoNegotiation,omitempty" json:"AutoNegotiation,omitempty"`
-	Speed           *xsd.Int     `xml:"onvif:Speed,omitempty" json:"Speed,omitempty"`
-	Duplex          *Duplex      `xml:"onvif:Duplex,omitempty" json:"Duplex,omitempty"`
+	AutoNegotiation *xsd.Boolean `xml:"AutoNegotiation,omitempty" json:"AutoNegotiation,omitempty"`
+	Speed           *xsd.Int     `xml:"Speed,omitempty" json:"Speed,omitempty"`
+	Duplex          *Duplex      `xml:"Duplex,omitempty" json:"Duplex,omitempty"`
 }
 
 // TODO: enum
@@ -1726,33 +1726,33 @@ type PrefixedIPv4Address struct {
 }
 
 type NetworkInterfaceSetConfiguration struct {
-	Enabled   *xsd.Boolean                               `xml:"onvif:Enabled,omitempty"`
-	Link      *NetworkInterfaceConnectionSetting         `xml:"onvif:Link,omitempty"`
-	MTU       *xsd.Int                                   `xml:"onvif:MTU,omitempty"`
-	IPv4      *IPv4NetworkInterfaceSetConfiguration      `xml:"onvif:IPv4,omitempty"`
-	IPv6      *IPv6NetworkInterfaceSetConfiguration      `xml:"onvif:IPv6,omitempty"`
-	Extension *NetworkInterfaceSetConfigurationExtension `xml:"onvif:Extension,omitempty"`
+	Enabled   *xsd.Boolean                               `xml:"Enabled,omitempty"`
+	Link      *NetworkInterfaceConnectionSetting         `xml:"Link,omitempty"`
+	MTU       *xsd.Int                                   `xml:"MTU,omitempty"`
+	IPv4      *IPv4NetworkInterfaceSetConfiguration      `xml:"IPv4,omitempty"`
+	IPv6      *IPv6NetworkInterfaceSetConfiguration      `xml:"IPv6,omitempty"`
+	Extension *NetworkInterfaceSetConfigurationExtension `xml:"Extension,omitempty"`
 }
 
 type NetworkInterfaceSetConfigurationExtension struct {
-	Dot3      Dot3Configuration                          `xml:"onvif:Dot3,omitempty"`
-	Dot11     Dot11Configuration                         `xml:"onvif:Dot11,omitempty"`
-	Extension NetworkInterfaceSetConfigurationExtension2 `xml:"onvif:Extension,omitempty"`
+	Dot3      Dot3Configuration                          `xml:"Dot3,omitempty"`
+	Dot11     Dot11Configuration                         `xml:"Dot11,omitempty"`
+	Extension NetworkInterfaceSetConfigurationExtension2 `xml:"Extension,omitempty"`
 }
 
 type NetworkInterfaceSetConfigurationExtension2 xsd.AnyType
 
 type IPv6NetworkInterfaceSetConfiguration struct {
-	Enabled            *xsd.Boolean           `xml:"onvif:Enabled,omitempty" json:",omitempty"`
-	AcceptRouterAdvert *xsd.Boolean           `xml:"onvif:AcceptRouterAdvert,omitempty" json:",omitempty"`
-	Manual             *PrefixedIPv6Address   `xml:"onvif:Manual,omitempty" json:",omitempty"`
-	DHCP               *IPv6DHCPConfiguration `xml:"onvif:DHCP,omitempty" json:",omitempty"`
+	Enabled            *xsd.Boolean           `xml:"Enabled,omitempty" json:",omitempty"`
+	AcceptRouterAdvert *xsd.Boolean           `xml:"AcceptRouterAdvert,omitempty" json:",omitempty"`
+	Manual             *PrefixedIPv6Address   `xml:"Manual,omitempty" json:",omitempty"`
+	DHCP               *IPv6DHCPConfiguration `xml:"DHCP,omitempty" json:",omitempty"`
 }
 
 type IPv4NetworkInterfaceSetConfiguration struct {
-	Enabled *xsd.Boolean         `xml:"onvif:Enabled,omitempty"`
-	Manual  *PrefixedIPv4Address `xml:"onvif:Manual,omitempty"`
-	DHCP    *xsd.Boolean         `xml:"onvif:DHCP,omitempty"`
+	Enabled *xsd.Boolean         `xml:"Enabled,omitempty"`
+	Manual  *PrefixedIPv4Address `xml:"Manual,omitempty"`
+	DHCP    *xsd.Boolean         `xml:"DHCP,omitempty"`
 }
 
 type NetworkProtocolResponse struct {
@@ -1763,10 +1763,10 @@ type NetworkProtocolResponse struct {
 }
 
 type NetworkProtocolRequest struct {
-	Name      *NetworkProtocolType      `xml:"onvif:Name,omitempty"`
-	Enabled   *xsd.Boolean              `xml:"onvif:Enabled,omitempty"`
-	Port      *xsd.Int                  `xml:"onvif:Port,omitempty"`
-	Extension *NetworkProtocolExtension `xml:"onvif:Extension,omitempty"`
+	Name      *NetworkProtocolType      `xml:"Name,omitempty"`
+	Enabled   *xsd.Boolean              `xml:"Enabled,omitempty"`
+	Port      *xsd.Int                  `xml:"Port,omitempty"`
+	Extension *NetworkProtocolExtension `xml:"Extension,omitempty"`
 }
 
 type NetworkProtocolExtension xsd.AnyType
@@ -2011,18 +2011,18 @@ type Date struct {
 }
 
 type DateTimeRequest struct {
-	Time *TimeRequest `xml:"onvif:Time,omitempty"`
-	Date *DateRequest `xml:"onvif:Date,omitempty"`
+	Time *TimeRequest `xml:"Time,omitempty"`
+	Date *DateRequest `xml:"Date,omitempty"`
 }
 
 type TimeRequest struct {
-	Hour   *xsd.Int `xml:"onvif:Hour,omitempty"`
-	Minute *xsd.Int `xml:"onvif:Minute,omitempty"`
-	Second *xsd.Int `xml:"onvif:Second,omitempty"`
+	Hour   *xsd.Int `xml:"Hour,omitempty"`
+	Minute *xsd.Int `xml:"Minute,omitempty"`
+	Second *xsd.Int `xml:"Second,omitempty"`
 }
 
 type DateRequest struct {
-	Year  *xsd.Int `xml:"onvif:Year,omitempty"`
-	Month *xsd.Int `xml:"onvif:Month,omitempty"`
-	Day   *xsd.Int `xml:"onvif:Day,omitempty"`
+	Year  *xsd.Int `xml:"Year,omitempty"`
+	Month *xsd.Int `xml:"Month,omitempty"`
+	Day   *xsd.Int `xml:"Day,omitempty"`
 }
