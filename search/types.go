@@ -2053,11 +2053,11 @@ const (
 	ReceiverStateUnknown ReceiverState = "Unknown"
 )
 
-type ReceiverReference *ReferenceToken
+type ReceiverReference string
 
-type RecordingReference *ReferenceToken
+type RecordingReference string
 
-type TrackReference *ReferenceToken
+type TrackReference string
 
 type Description string
 
@@ -6526,7 +6526,7 @@ type MetadataFilter struct {
 type FindRecordingResultList struct {
 
 	// The state of the search when the result is returned. Indicates if there can be more results, or if the search is completed.
-	SearchState *SearchState `xml:"SearchState,omitempty" json:"SearchState,omitempty"`
+	SearchState SearchState `xml:"SearchState,omitempty" json:"SearchState,omitempty"`
 
 	// A RecordingInformation structure for each found recording matching the search.
 	RecordingInformation []*RecordingInformation `xml:"RecordingInformation,omitempty" json:"RecordingInformation,omitempty"`
@@ -6535,7 +6535,7 @@ type FindRecordingResultList struct {
 type FindEventResultList struct {
 
 	// The state of the search when the result is returned. Indicates if there can be more results, or if the search is completed.
-	SearchState *SearchState `xml:"SearchState,omitempty" json:"SearchState,omitempty"`
+	SearchState SearchState `xml:"SearchState,omitempty" json:"SearchState,omitempty"`
 
 	// A FindEventResult structure for each found event matching the search.
 	Result []*FindEventResult `xml:"Result,omitempty" json:"Result,omitempty"`
@@ -6564,7 +6564,7 @@ type FindEventResult struct {
 type FindPTZPositionResultList struct {
 
 	// The state of the search when the result is returned. Indicates if there can be more results, or if the search is completed.
-	SearchState *SearchState `xml:"SearchState,omitempty" json:"SearchState,omitempty"`
+	SearchState SearchState `xml:"SearchState,omitempty" json:"SearchState,omitempty"`
 
 	// A FindPTZPositionResult structure for each found PTZ position matching the search.
 	Result []*FindPTZPositionResult `xml:"Result,omitempty" json:"Result,omitempty"`
@@ -6620,9 +6620,9 @@ type RecordingInformation struct {
 	//
 	Source *RecordingSourceInformation `xml:"Source,omitempty" json:"Source,omitempty"`
 
-	EarliestRecording soap.XSDDateTime `xml:"EarliestRecording,omitempty" json:"EarliestRecording,omitempty"`
+	EarliestRecording string `xml:"EarliestRecording,omitempty" json:"EarliestRecording,omitempty"`
 
-	LatestRecording soap.XSDDateTime `xml:"LatestRecording,omitempty" json:"LatestRecording,omitempty"`
+	LatestRecording string `xml:"LatestRecording,omitempty" json:"LatestRecording,omitempty"`
 
 	Content *Description `xml:"Content,omitempty" json:"Content,omitempty"`
 
@@ -6630,8 +6630,6 @@ type RecordingInformation struct {
 	Track []*TrackInformation `xml:"Track,omitempty" json:"Track,omitempty"`
 
 	RecordingStatus *RecordingStatus `xml:"RecordingStatus,omitempty" json:"RecordingStatus,omitempty"`
-
-	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type RecordingSourceInformation struct {
@@ -6729,12 +6727,10 @@ type TrackInformation struct {
 	Description *Description `xml:"Description,omitempty" json:"Description,omitempty"`
 
 	// The start date and time of the oldest recorded data in the track.
-	DataFrom soap.XSDDateTime `xml:"DataFrom,omitempty" json:"DataFrom,omitempty"`
+	DataFrom string `xml:"DataFrom,omitempty" json:"DataFrom,omitempty"`
 
 	// The stop date and time of the newest recorded data in the track.
-	DataTo soap.XSDDateTime `xml:"DataTo,omitempty" json:"DataTo,omitempty"`
-
-	Items []string `xml:",any" json:"items,omitempty"`
+	DataTo string `xml:"DataTo,omitempty" json:"DataTo,omitempty"`
 }
 
 type MediaAttributes struct {
