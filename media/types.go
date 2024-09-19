@@ -631,9 +631,9 @@ type GetGuaranteedNumberOfVideoEncoderInstancesResponse struct {
 // GetStreamUri and its properties are defined in the Onvif specification:
 // https://www.onvif.org/ver10/media/wsdl/media.wsdl#op.GetStreamUri
 type GetStreamUri struct {
-	XMLName      string                `xml:"trt:GetStreamUri"`
-	StreamSetup  *onvif.StreamSetup    `xml:"trt:StreamSetup"`
-	ProfileToken *onvif.ReferenceToken `xml:"trt:ProfileToken"`
+	XMLName      string               `xml:"trt:GetStreamUri"`
+	StreamSetup  *onvif.StreamSetup   `xml:"trt:StreamSetup"`
+	ProfileToken onvif.ReferenceToken `xml:"trt:ProfileToken"`
 }
 
 type GetStreamUriResponse struct {

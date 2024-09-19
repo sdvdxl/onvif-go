@@ -130,13 +130,13 @@ type VideoSource struct {
 }
 
 type VideoResolution struct {
-	Width  *xsd.Int `json:",omitempty"`
-	Height *xsd.Int `json:",omitempty"`
+	Width  xsd.Int `json:",omitempty"`
+	Height xsd.Int `json:",omitempty"`
 }
 
 type VideoResolutionRequest struct {
-	Width  *xsd.Int `xml:"onvif:Width,omitempty"`
-	Height *xsd.Int `xml:"onvif:Height,omitempty"`
+	Width  xsd.Int `xml:"onvif:Width,omitempty"`
+	Height xsd.Int `xml:"onvif:Height,omitempty"`
 }
 
 type ImagingSettings struct {
@@ -432,12 +432,12 @@ type AudioSourceConfiguration struct {
 
 type VideoEncoderConfiguration struct {
 	ConfigurationEntity
-	Encoding       *VideoEncoding          `json:",omitempty"`
-	Resolution     *VideoResolution        `json:",omitempty"`
+	Encoding       VideoEncoding           `json:",omitempty"`
+	Resolution     VideoResolution         `json:",omitempty"`
 	Quality        float64                 `json:",omitempty"`
-	RateControl    *VideoRateControl       `json:",omitempty"`
-	MPEG4          *Mpeg4Configuration     `json:",omitempty"`
-	H264           *H264Configuration      `json:",omitempty"`
+	RateControl    VideoRateControl        `json:",omitempty"`
+	MPEG4          Mpeg4Configuration      `json:",omitempty"`
+	H264           H264Configuration       `json:",omitempty"`
 	Multicast      *MulticastConfiguration `json:",omitempty"`
 	SessionTimeout *xsd.Duration           `json:",omitempty"`
 }
@@ -457,9 +457,9 @@ type VideoEncoderConfigurationRequest struct {
 type VideoEncoding xsd.String
 
 type VideoRateControl struct {
-	FrameRateLimit   *xsd.Int `json:",omitempty"`
-	EncodingInterval *xsd.Int `json:",omitempty"`
-	BitrateLimit     *xsd.Int `json:",omitempty"`
+	FrameRateLimit   xsd.Int `json:",omitempty"`
+	EncodingInterval xsd.Int `json:",omitempty"`
+	BitrateLimit     xsd.Int `json:",omitempty"`
 }
 
 type VideoRateControlRequest struct {

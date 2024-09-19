@@ -117,19 +117,19 @@ type RemovePresetResponse struct {
 }
 
 type GotoPreset struct {
-	XMLName      string                `xml:"tptz:GotoPreset,omitempty"`
-	ProfileToken *onvif.ReferenceToken `xml:"tptz:ProfileToken,omitempty"`
-	PresetToken  *onvif.ReferenceToken `xml:"tptz:PresetToken,omitempty"`
-	Speed        *onvif.PTZSpeed       `xml:"tptz:Speed,omitempty"`
+	XMLName      string               `xml:"tptz:GotoPreset,omitempty"`
+	ProfileToken onvif.ReferenceToken `xml:"tptz:ProfileToken,omitempty"`
+	PresetToken  onvif.ReferenceToken `xml:"tptz:PresetToken,omitempty"`
+	Speed        onvif.PTZSpeed       `xml:"tptz:Speed,omitempty"`
 }
 
 type GotoPresetResponse struct {
 }
 
 type GotoHomePosition struct {
-	XMLName      string                `xml:"tptz:GotoHomePosition"`
-	ProfileToken *onvif.ReferenceToken `xml:"tptz:ProfileToken,omitempty"`
-	Speed        *onvif.PTZSpeed       `xml:"tptz:Speed,omitempty"`
+	XMLName      string               `xml:"tptz:GotoHomePosition"`
+	ProfileToken onvif.ReferenceToken `xml:"tptz:ProfileToken,omitempty"`
+	Speed        onvif.PTZSpeed       `xml:"tptz:Speed,omitempty"`
 }
 
 type GotoHomePositionResponse struct {
