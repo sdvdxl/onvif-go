@@ -18,6 +18,7 @@ const (
 	Media2WebService    = "Media2"
 	PTZWebService       = "PTZ"
 	RecordingWebService = "Recording"
+	SearchWebService    = "Search"
 )
 
 // WebService - Analytics
@@ -294,4 +295,27 @@ const (
 	SetRecordingJobMode          = "SetRecordingJobMode"
 	SetTrackConfiguration        = "SetTrackConfiguration"
 	StopExportRecordedData       = "StopExportRecordedData"
+)
+
+// WebService - Search
+const (
+	CreatePullPoint             = "CreatePullPoint"
+	DestroyPullPoint            = "DestroyPullPoint"
+	EndSearch                   = "EndSearch"
+	FindEvents                  = "FindEvents"
+	FindMetadata                = "FindMetadata"
+	FindPTZPosition             = "FindPTZPosition"
+	FindRecordings              = "FindRecordings"
+	GetCurrentMessage           = "GetCurrentMessage"
+	GetEventSearchResults       = "GetEventSearchResults"
+	GetMediaAttributes          = "GetMediaAttributes"
+	GetMessages                 = "GetMessages"
+	GetMetadataSearchResults    = "GetMetadataSearchResults"
+	GetPTZPositionSearchResults = "GetPTZPositionSearchResults"
+	GetRecordingInformation     = "GetRecordingInformation"
+	GetRecordingSearchResults   = "GetRecordingSearchResults"
+	GetRecordingSummary         = "GetRecordingSummary"
+	GetSearchState              = "GetSearchState"
+	PauseSubscription           = "PauseSubscription"
+	ResumeSubscription          = "ResumeSubscription"
 )

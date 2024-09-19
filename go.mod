@@ -10,6 +10,7 @@ require (
 	github.com/elgs/gostrgen v0.0.0-20161222160715-9d61ae07eeae
 	github.com/gin-gonic/gin v1.10.0
 	github.com/google/uuid v1.6.0
+	github.com/hooklift/gowsdl v0.5.0
 	github.com/stretchr/testify v1.9.0
 	golang.org/x/net v0.29.0
 )

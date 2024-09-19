@@ -27,6 +27,7 @@ var Xlmns = map[string]string{
 	"tr2":     "http://www.onvif.org/ver20/media/wsdl",
 	"tev":     "http://www.onvif.org/ver10/events/wsdl",
 	"tptz":    "http://www.onvif.org/ver20/ptz/wsdl",
+	"tse":     "http://www.onvif.org/ver10/search/wsdl",
 	"timg":    "http://www.onvif.org/ver20/imaging/wsdl",
 	"tan":     "http://www.onvif.org/ver20/analytics/wsdl",
 	"xmime":   "http://www.w3.org/2005/05/xmlmime",

@@ -17,6 +17,7 @@ import (
 	"github.com/IOTechSystems/onvif/media2"
 	"github.com/IOTechSystems/onvif/ptz"
 	"github.com/IOTechSystems/onvif/recording"
+	"github.com/IOTechSystems/onvif/search"
 )
 
 var AnalyticsFunctionMap = map[string]Function{
@@ -296,4 +297,30 @@ var RecordingFunctionMap = map[string]Function{
 	SetRecordingJobMode:          &recording.SetRecordingJobModeFunction{},
 	SetTrackConfiguration:        &recording.SetTrackConfigurationFunction{},
 	StopExportRecordedData:       &recording.StopExportRecordedDataFunction{},
+}
+
+var SearchFunctionMap = map[string]Function{
+	CreatePullPoint:             &search.CreatePullPointFunction{},
+	DestroyPullPoint:            &search.DestroyPullPointFunction{},
+	EndSearch:                   &search.EndSearchFunction{},
+	FindEvents:                  &search.FindEventsFunction{},
+	FindMetadata:                &search.FindMetadataFunction{},
+	FindPTZPosition:             &search.FindPTZPositionFunction{},
+	FindRecordings:              &search.FindRecordingsFunction{},
+	GetCurrentMessage:           &search.GetCurrentMessageFunction{},
+	GetEventSearchResults:       &search.GetEventSearchResultsFunction{},
+	GetMediaAttributes:          &search.GetMediaAttributesFunction{},
+	GetMessages:                 &search.GetMessagesFunction{},
+	GetMetadataSearchResults:    &search.GetMetadataSearchResultsFunction{},
+	GetPTZPositionSearchResults: &search.GetPTZPositionSearchResultsFunction{},
+	GetRecordingInformation:     &search.GetRecordingInformationFunction{},
+	GetRecordingSearchResults:   &search.GetRecordingSearchResultsFunction{},
+	GetRecordingSummary:         &search.GetRecordingSummaryFunction{},
+	GetSearchState:              &search.GetSearchStateFunction{},
+	GetServiceCapabilities:      &search.GetServiceCapabilitiesFunction{},
+	PauseSubscription:           &search.PauseSubscriptionFunction{},
+	Renew:                       &search.RenewFunction{},
+	ResumeSubscription:          &search.ResumeSubscriptionFunction{},
+	Subscribe:                   &search.SubscribeFunction{},
+	Unsubscribe:                 &search.UnsubscribeFunction{},
 }
