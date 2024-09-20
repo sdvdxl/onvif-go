@@ -937,8 +937,8 @@ type G726DecOptions struct {
 type AudioDecoderConfigurationOptionsExtension xsd.AnyType
 
 type StreamSetup struct {
-	Stream    *StreamType `xml:"Stream,omitempty"`
-	Transport *Transport  `xml:"Transport,omitempty"`
+	Stream    StreamType `xml:"Stream,omitempty"`
+	Transport *Transport `xml:"Transport,omitempty"`
 }
 
 type StreamType xsd.String

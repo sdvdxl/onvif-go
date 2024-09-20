@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/xml"
 	"github.com/IOTechSystems/onvif/xsd"
+	"github.com/IOTechSystems/onvif/xsd/onvif"
 	"github.com/hooklift/gowsdl/soap"
 	"time"
 )
@@ -31,10 +32,10 @@ type GetReplayUri struct {
 	XMLName xml.Name `xml:"http://www.onvif.org/ver10/replay/wsdl GetReplayUri"`
 
 	// Specifies the connection parameters to be used for the stream. The URI that is returned may depend on these parameters.
-	StreamSetup *StreamSetup `xml:"StreamSetup,omitempty" json:"StreamSetup,omitempty"`
+	StreamSetup *onvif.StreamSetup `xml:"StreamSetup,omitempty" json:"StreamSetup,omitempty"`
 
 	// The identifier of the recording to be streamed.
-	RecordingToken *ReferenceToken `xml:"RecordingToken,omitempty" json:"RecordingToken,omitempty"`
+	RecordingToken ReferenceToken `xml:"RecordingToken,omitempty" json:"RecordingToken,omitempty"`
 }
 
 type GetReplayUriResponse struct {
@@ -3073,25 +3074,6 @@ type MulticastConfiguration struct {
 	AutoStart bool `xml:"AutoStart,omitempty" json:"AutoStart,omitempty"`
 
 	Items []string `xml:",any" json:"items,omitempty"`
-}
-
-type StreamSetup struct {
-
-	// Defines if a multicast or unicast stream is requested
-	Stream *StreamType `xml:"Stream,omitempty" json:"Stream,omitempty"`
-
-	Transport *Transport `xml:"Transport,omitempty" json:"Transport,omitempty"`
-
-	Items []string `xml:",any" json:"items,omitempty"`
-}
-
-type Transport struct {
-
-	// Defines the network protocol for streaming, either UDP=RTP/UDP, RTSP=RTP/RTSP/TCP or HTTP=RTP/RTSP/HTTP/TCP
-	Protocol *TransportProtocol `xml:"Protocol,omitempty" json:"Protocol,omitempty"`
-
-	// Optional element to describe further tunnel options. This element is normally not needed
-	Tunnel *Transport `xml:"Tunnel,omitempty" json:"Tunnel,omitempty"`
 }
 
 type MediaUri struct {
@@ -6235,7 +6217,7 @@ type ReceiverConfiguration struct {
 	MediaUri xsd.AnyURI `xml:"MediaUri,omitempty" json:"MediaUri,omitempty"`
 
 	// Stream connection parameters.
-	StreamSetup *StreamSetup `xml:"StreamSetup,omitempty" json:"StreamSetup,omitempty"`
+	StreamSetup *onvif.StreamSetup `xml:"StreamSetup,omitempty" json:"StreamSetup,omitempty"`
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }

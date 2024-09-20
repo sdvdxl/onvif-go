@@ -7,6 +7,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/IOTechSystems/onvif/xsd/onvif"
+	"github.com/rs/zerolog/log"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -261,10 +262,12 @@ func (dev *Device) CallMethod(method interface{}) (*http.Response, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	requestBody, err := xml.Marshal(method)
 	if err != nil {
 		return nil, err
 	}
+	log.Debug().Str("deviceAddr", dev.params.Xaddr).Str("respStr", string(requestBody)).Msg("request xml")
 	return dev.SendSoap(endpoint, string(requestBody))
 }
 
