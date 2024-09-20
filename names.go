@@ -19,6 +19,7 @@ const (
 	PTZWebService       = "PTZ"
 	RecordingWebService = "Recording"
 	SearchWebService    = "Search"
+	ReplayWebService    = "Replay"
 )
 
 // WebService - Analytics
@@ -318,4 +319,11 @@ const (
 	GetSearchState              = "GetSearchState"
 	PauseSubscription           = "PauseSubscription"
 	ResumeSubscription          = "ResumeSubscription"
+)
+
+// WebService - Replay
+const (
+	GetReplayConfiguration = "GetReplayConfiguration"
+	GetReplayUri           = "GetReplayUri"
+	SetReplayConfiguration = "SetReplayConfiguration"
 )

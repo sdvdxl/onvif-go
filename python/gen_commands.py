@@ -29,7 +29,8 @@ SERVICE_NAMES = [
     'media2',
     'ptz',
     'recording',
-    'search'
+    'search',
+    'replay'
 ]
 
 

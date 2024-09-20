@@ -17,6 +17,7 @@ import (
 	"github.com/IOTechSystems/onvif/media2"
 	"github.com/IOTechSystems/onvif/ptz"
 	"github.com/IOTechSystems/onvif/recording"
+	"github.com/IOTechSystems/onvif/replay"
 	"github.com/IOTechSystems/onvif/search"
 )
 
@@ -323,4 +324,20 @@ var SearchFunctionMap = map[string]Function{
 	ResumeSubscription:          &search.ResumeSubscriptionFunction{},
 	Subscribe:                   &search.SubscribeFunction{},
 	Unsubscribe:                 &search.UnsubscribeFunction{},
+}
+
+var ReplayFunctionMap = map[string]Function{
+	CreatePullPoint:        &replay.CreatePullPointFunction{},
+	DestroyPullPoint:       &replay.DestroyPullPointFunction{},
+	GetCurrentMessage:      &replay.GetCurrentMessageFunction{},
+	GetMessages:            &replay.GetMessagesFunction{},
+	GetReplayConfiguration: &replay.GetReplayConfigurationFunction{},
+	GetReplayUri:           &replay.GetReplayUriFunction{},
+	GetServiceCapabilities: &replay.GetServiceCapabilitiesFunction{},
+	PauseSubscription:      &replay.PauseSubscriptionFunction{},
+	Renew:                  &replay.RenewFunction{},
+	ResumeSubscription:     &replay.ResumeSubscriptionFunction{},
+	SetReplayConfiguration: &replay.SetReplayConfigurationFunction{},
+	Subscribe:              &replay.SubscribeFunction{},
+	Unsubscribe:            &replay.UnsubscribeFunction{},
 }
