@@ -7,6 +7,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/IOTechSystems/onvif/xsd/onvif"
+	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"io/ioutil"
 	"net/http"
@@ -267,7 +268,7 @@ func (dev *Device) CallMethod(method interface{}) (*http.Response, error) {
 	if err != nil {
 		return nil, err
 	}
-	log.Debug().Str("deviceAddr", dev.params.Xaddr).Str("respStr", string(requestBody)).Msg("request xml")
+	log.Debug().Str("deviceAddr", dev.params.Xaddr).Str("req", string(requestBody)).Msg("request xml body ==========================》")
 	return dev.SendSoap(endpoint, string(requestBody))
 }
 
@@ -294,11 +295,15 @@ func (dev *Device) SendSoap(endpoint string, xmlRequestBody string) (resp *http.
 		soap.AddWSSecurity(dev.params.Username, dev.params.Password)
 	}
 
+	soapContent := soap.String()
 	if dev.params.AuthMode == DigestAuth || dev.params.AuthMode == Both {
-		resp, err = dev.digestClient.Do(http.MethodPost, endpoint, soap.String())
+		resp, err = dev.digestClient.Do(http.MethodPost, endpoint, soapContent)
 	} else {
 		var req *http.Request
-		req, err = createHttpRequest(http.MethodPost, endpoint, soap.String())
+		req, err = createHttpRequest(http.MethodPost, endpoint, soapContent)
+		if log.Logger.GetLevel() == zerolog.DebugLevel {
+			log.Debug().Str("req", soapContent).Msg("soap full request ================================》")
+		}
 		if err != nil {
 			return nil, err
 		}

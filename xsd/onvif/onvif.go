@@ -655,8 +655,8 @@ type PTZConfigurationEntity struct {
 }
 
 type PTZSpeed struct {
-	PanTilt *Vector2D `json:",omitempty" xml:"onvif:PanTilt,omitempty"`
-	Zoom    *Vector1D `json:",omitempty" xml:"onvif:Zoom,omitempty"`
+	PanTilt *Vector2D `json:",omitempty" xml:"PanTilt,omitempty"`
+	Zoom    *Vector1D `json:",omitempty" xml:"Zoom,omitempty"`
 }
 
 type Vector2D struct {
@@ -1165,35 +1165,35 @@ type GeoLocation struct {
 }
 
 type PresetTour struct {
-	Token             ReferenceToken                 `xml:"token,attr"`
-	Name              Name                           `xml:"Name"`
-	Status            PTZPresetTourStatus            `xml:"Status"`
-	AutoStart         xsd.Boolean                    `xml:"AutoStart"`
-	StartingCondition PTZPresetTourStartingCondition `xml:"StartingCondition"`
-	TourSpot          PTZPresetTourSpot              `xml:"TourSpot"`
-	Extension         PTZPresetTourExtension         `xml:"Extension"`
+	Token             ReferenceToken                  `xml:"token,attr"`
+	Name              Name                            `xml:"Name"`
+	Status            *PTZPresetTourStatus            `xml:"Status,omitempty"`
+	AutoStart         *xsd.Boolean                    `xml:"AutoStart,omitempty"`
+	StartingCondition *PTZPresetTourStartingCondition `xml:"StartingCondition,omitempty"`
+	TourSpot          []PTZPresetTourSpot             `xml:"TourSpot"`
+	Extension         *PTZPresetTourExtension         `xml:"Extension,omitempty"`
 }
 
 type PTZPresetTourStatus struct {
-	State           PTZPresetTourState           `xml:"State"`
-	CurrentTourSpot PTZPresetTourSpot            `xml:"CurrentTourSpot"`
-	Extension       PTZPresetTourStatusExtension `xml:"Extension"`
+	State           PTZPresetTourState            `xml:"State"`
+	CurrentTourSpot *PTZPresetTourSpot            `xml:"CurrentTourSpot"`
+	Extension       *PTZPresetTourStatusExtension `xml:"Extension"`
 }
 
 type PTZPresetTourState xsd.String
 
 type PTZPresetTourSpot struct {
-	PresetDetail PTZPresetTourPresetDetail  `xml:"PresetDetail"`
-	Speed        PTZSpeed                   `xml:"Speed"`
-	StayTime     xsd.Duration               `xml:"StayTime"`
-	Extension    PTZPresetTourSpotExtension `xml:"Extension"`
+	PresetDetail *PTZPresetTourPresetDetail  `xml:"PresetDetail"`
+	Speed        *PTZSpeed                   `xml:"Speed"`
+	StayTime     *xsd.Duration               `xml:"StayTime"`
+	Extension    *PTZPresetTourSpotExtension `xml:"Extension"`
 }
 
 type PTZPresetTourPresetDetail struct {
-	PresetToken   ReferenceToken             `xml:"PresetToken"`
-	Home          xsd.Boolean                `xml:"Home"`
-	PTZPosition   PTZVector                  `xml:"PTZPosition"`
-	TypeExtension PTZPresetTourTypeExtension `xml:"TypeExtension"`
+	PresetToken   ReferenceToken              `xml:"PresetToken"`
+	Home          *xsd.Boolean                `xml:"Home,omitempty"`
+	PTZPosition   *PTZVector                  `xml:"PTZPosition,omitempty"`
+	TypeExtension *PTZPresetTourTypeExtension `xml:"TypeExtension,omitempty"`
 }
 
 type PTZPresetTourTypeExtension xsd.AnyType
