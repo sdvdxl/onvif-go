@@ -268,7 +268,7 @@ func (dev *Device) CallMethod(method interface{}) (*http.Response, error) {
 	if err != nil {
 		return nil, err
 	}
-	log.Debug().Str("deviceAddr", dev.params.Xaddr).Str("req", string(requestBody)).Msg("request xml body ==========================》")
+	log.Trace().Str("deviceAddr", dev.params.Xaddr).Str("req", string(requestBody)).Msg("request xml body ==========================》")
 	return dev.SendSoap(endpoint, string(requestBody))
 }
 
@@ -301,8 +301,8 @@ func (dev *Device) SendSoap(endpoint string, xmlRequestBody string) (resp *http.
 	} else {
 		var req *http.Request
 		req, err = createHttpRequest(http.MethodPost, endpoint, soapContent)
-		if log.Logger.GetLevel() == zerolog.DebugLevel {
-			log.Debug().Str("req", soapContent).Msg("soap full request ================================》")
+		if log.Logger.GetLevel() >= zerolog.TraceLevel {
+			log.Trace().Str("req", soapContent).Msg("soap full request ================================》")
 		}
 		if err != nil {
 			return nil, err
