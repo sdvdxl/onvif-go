@@ -274,17 +274,6 @@ type RenewResponse struct { //http://docs.oasis-open.org/wsn/b-2.xsd
 	CurrentTime     *xsd.String
 }
 
-// Unsubscribe action for Unsubscribe event topic
-type Unsubscribe struct { //http://docs.oasis-open.org/wsn/b-2.xsd
-	XMLName string `xml:"tev:Unsubscribe"`
-	Any     string
-}
-
-// UnsubscribeResponse message for Unsubscribe event topic
-type UnsubscribeResponse struct { //http://docs.oasis-open.org/wsn/b-2.xsd
-	Any string
-}
-
 // CreatePullPointSubscription action
 // BUG(r) Bad AbsoluteOrRelativeTimeType type
 type CreatePullPointSubscription struct {

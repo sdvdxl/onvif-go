@@ -6,7 +6,6 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
-	"github.com/IOTechSystems/onvif/Subscription"
 	"github.com/IOTechSystems/onvif/xsd/onvif"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -267,8 +266,8 @@ func (dev *Device) CallMethod(method interface{}) (*http.Response, error) {
 	}
 	// TODO 优化
 	if strings.HasSuffix(endpoint, "onvif/Subscription") {
-		req := method.(Subscription.PullMessages)
-		endpoint = req.EndPoint
+		req := method.(onvif.GetEndpoint)
+		endpoint = req.GetEndpoint()
 	}
 
 	requestBody, err := xml.Marshal(method)
@@ -308,7 +307,7 @@ func (dev *Device) SendSoap(endpoint string, xmlRequestBody string) (resp *http.
 	} else {
 		var req *http.Request
 		req, err = createHttpRequest(http.MethodPost, endpoint, soapContent)
-		if log.Logger.GetLevel() >= zerolog.TraceLevel {
+		if log.Logger.GetLevel() <= zerolog.TraceLevel {
 			log.Trace().Str("req", soapContent).Msg("soap full request ================================》")
 		}
 		if err != nil {

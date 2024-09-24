@@ -142,7 +142,6 @@ const (
 	SetSynchronizationPoint     = "SetSynchronizationPoint"
 	Subscribe                   = "Subscribe"
 	SubscriptionReference       = "SubscriptionReference"
-	Unsubscribe                 = "Unsubscribe"
 )
 
 // WebService - Imaging
@@ -319,6 +318,7 @@ const (
 	GetSearchState              = "GetSearchState"
 	PauseSubscription           = "PauseSubscription"
 	ResumeSubscription          = "ResumeSubscription"
+	Unsubscribe                 = "Unsubscribe"
 )
 
 // WebService - Replay

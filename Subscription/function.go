@@ -16,3 +16,12 @@ func (_ *PullMessagesFunction) Request() interface{} {
 func (_ *PullMessagesFunction) Response() interface{} {
 	return &PullMessagesResponse{}
 }
+
+type UnsubscribeFunction struct{}
+
+func (_ *UnsubscribeFunction) Request() interface{} {
+	return &Unsubscribe{}
+}
+func (_ *UnsubscribeFunction) Response() interface{} {
+	return &UnsubscribeResponse{}
+}

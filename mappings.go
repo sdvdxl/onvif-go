@@ -139,7 +139,6 @@ var EventFunctionMap = map[string]Function{
 	SetSynchronizationPoint:     &event.SetSynchronizationPointFunction{},
 	Subscribe:                   &event.SubscribeFunction{},
 	SubscriptionReference:       &event.SubscriptionReferenceFunction{},
-	Unsubscribe:                 &event.UnsubscribeFunction{},
 }
 
 var ImagingFunctionMap = map[string]Function{
@@ -344,4 +343,5 @@ var ReplayFunctionMap = map[string]Function{
 
 var SubscriptionFunctionMap = map[string]Function{
 	PullMessages: &Subscription.PullMessagesFunction{},
+	Unsubscribe:  &Subscription.UnsubscribeFunction{},
 }

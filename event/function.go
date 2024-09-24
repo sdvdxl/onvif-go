@@ -79,12 +79,3 @@ func (_ *SubscriptionReferenceFunction) Request() interface{} {
 func (_ *SubscriptionReferenceFunction) Response() interface{} {
 	return &SubscriptionReferenceResponse{}
 }
-
-type UnsubscribeFunction struct{}
-
-func (_ *UnsubscribeFunction) Request() interface{} {
-	return &Unsubscribe{}
-}
-func (_ *UnsubscribeFunction) Response() interface{} {
-	return &UnsubscribeResponse{}
-}
