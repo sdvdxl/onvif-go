@@ -227,10 +227,7 @@ More info: https://www.w3.org/TR/xmlschema-2/#dateTime
 TODO: decide good type for time with proper format
 TODO: process restrictions
 */
-type DateTime struct {
-	Time Time
-	Date Date
-}
+type DateTime string
 
 /*
 Time represents an instant of time that recurs every day.
