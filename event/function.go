@@ -35,15 +35,6 @@ func (_ *GetServiceCapabilitiesFunction) Response() interface{} {
 	return &GetServiceCapabilitiesResponse{}
 }
 
-type PullMessagesFunction struct{}
-
-func (_ *PullMessagesFunction) Request() interface{} {
-	return &PullMessages{}
-}
-func (_ *PullMessagesFunction) Response() interface{} {
-	return &PullMessagesResponse{}
-}
-
 type RenewFunction struct{}
 
 func (_ *RenewFunction) Request() interface{} {

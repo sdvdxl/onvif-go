@@ -30,7 +30,8 @@ SERVICE_NAMES = [
     'ptz',
     'recording',
     'search',
-    'replay'
+    'replay',
+    "Subscription"
 ]
 
 

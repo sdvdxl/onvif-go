@@ -10,16 +10,17 @@ package onvif
 
 // Onvif WebService
 const (
-	AnalyticsWebService = "Analytics"
-	DeviceWebService    = "Device"
-	EventWebService     = "Event"
-	ImagingWebService   = "Imaging"
-	MediaWebService     = "Media"
-	Media2WebService    = "Media2"
-	PTZWebService       = "PTZ"
-	RecordingWebService = "Recording"
-	SearchWebService    = "Search"
-	ReplayWebService    = "Replay"
+	AnalyticsWebService    = "Analytics"
+	DeviceWebService       = "Device"
+	EventWebService        = "Event"
+	ImagingWebService      = "Imaging"
+	MediaWebService        = "Media"
+	Media2WebService       = "Media2"
+	PTZWebService          = "PTZ"
+	RecordingWebService    = "Recording"
+	SearchWebService       = "Search"
+	ReplayWebService       = "Replay"
+	SubscriptionWebService = "Subscription"
 )
 
 // WebService - Analytics
@@ -136,7 +137,6 @@ const (
 const (
 	CreatePullPointSubscription = "CreatePullPointSubscription"
 	GetEventProperties          = "GetEventProperties"
-	PullMessages                = "PullMessages"
 	Renew                       = "Renew"
 	Seek                        = "Seek"
 	SetSynchronizationPoint     = "SetSynchronizationPoint"
@@ -326,4 +326,9 @@ const (
 	GetReplayConfiguration = "GetReplayConfiguration"
 	GetReplayUri           = "GetReplayUri"
 	SetReplayConfiguration = "SetReplayConfiguration"
+)
+
+// WebService - Subscription
+const (
+	PullMessages = "PullMessages"
 )

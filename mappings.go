@@ -9,6 +9,7 @@
 package onvif
 
 import (
+	"github.com/IOTechSystems/onvif/Subscription"
 	"github.com/IOTechSystems/onvif/analytics"
 	"github.com/IOTechSystems/onvif/device"
 	"github.com/IOTechSystems/onvif/event"
@@ -133,7 +134,6 @@ var EventFunctionMap = map[string]Function{
 	CreatePullPointSubscription: &event.CreatePullPointSubscriptionFunction{},
 	GetEventProperties:          &event.GetEventPropertiesFunction{},
 	GetServiceCapabilities:      &event.GetServiceCapabilitiesFunction{},
-	PullMessages:                &event.PullMessagesFunction{},
 	Renew:                       &event.RenewFunction{},
 	Seek:                        &event.SeekFunction{},
 	SetSynchronizationPoint:     &event.SetSynchronizationPointFunction{},
@@ -340,4 +340,8 @@ var ReplayFunctionMap = map[string]Function{
 	SetReplayConfiguration: &replay.SetReplayConfigurationFunction{},
 	Subscribe:              &replay.SubscribeFunction{},
 	Unsubscribe:            &replay.UnsubscribeFunction{},
+}
+
+var SubscriptionFunctionMap = map[string]Function{
+	PullMessages: &Subscription.PullMessagesFunction{},
 }

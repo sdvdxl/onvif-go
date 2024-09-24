@@ -325,20 +325,6 @@ type GetEventPropertiesResponse struct {
 
 //Port type PullPointSubscription
 
-// PullMessages Action
-type PullMessages struct {
-	XMLName      string       `xml:"tev:PullMessages"`
-	Timeout      xsd.Duration `xml:"tev:Timeout"`
-	MessageLimit xsd.Int      `xml:"tev:MessageLimit"`
-}
-
-// PullMessagesResponse response type
-type PullMessagesResponse struct {
-	CurrentTime         *xsd.String           `json:",omitempty" xml:",omitempty"`
-	TerminationTime     *xsd.String           `json:",omitempty" xml:",omitempty"`
-	NotificationMessage []NotificationMessage `json:",omitempty" xml:",omitempty"`
-}
-
 // PullMessagesFaultResponse response type
 type PullMessagesFaultResponse struct {
 	MaxTimeout      xsd.Duration

@@ -6,6 +6,7 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
+	"github.com/IOTechSystems/onvif/Subscription"
 	"github.com/IOTechSystems/onvif/xsd/onvif"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -175,6 +176,7 @@ func NewDevice(params DeviceParams) (*Device, error) {
 	dev.params = params
 	dev.endpoints = make(map[string]string)
 	dev.addEndpoint("Device", "http://"+dev.params.Xaddr+"/onvif/device_service")
+	dev.addEndpoint("Subscription", "http://"+dev.params.Xaddr+"/onvif/Subscription")
 
 	if dev.params.HttpClient == nil {
 		dev.params.HttpClient = new(http.Client)
@@ -262,6 +264,11 @@ func (dev *Device) CallMethod(method interface{}) (*http.Response, error) {
 	endpoint, err := dev.getEndpoint(pkg)
 	if err != nil {
 		return nil, err
+	}
+	// TODO 优化
+	if strings.HasSuffix(endpoint, "onvif/Subscription") {
+		req := method.(Subscription.PullMessages)
+		endpoint = req.EndPoint
 	}
 
 	requestBody, err := xml.Marshal(method)
