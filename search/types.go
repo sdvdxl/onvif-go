@@ -6468,7 +6468,7 @@ type SearchScope struct {
 	IncludedSources []*SourceReference `xml:"IncludedSources,omitempty" json:"IncludedSources,omitempty"`
 
 	// A list of recordings that are included in the scope. If this list is included, only data from one of these recordings shall be searched.
-	IncludedRecordings []*RecordingReference `xml:"IncludedRecordings,omitempty" json:"IncludedRecordings,omitempty"`
+	IncludedRecordings []RecordingReference `xml:"IncludedRecordings,omitempty" json:"IncludedRecordings,omitempty"`
 
 	// An xpath expression used to specify what recordings to search. Only those recordings with an RecordingInformation structure that matches the filter shall be searched.
 	RecordingInformationFilter *XPathExpression `xml:"RecordingInformationFilter,omitempty" json:"RecordingInformationFilter,omitempty"`
